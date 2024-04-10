@@ -9,13 +9,20 @@ import com.smile.example.common.model.User;
  * @date 2024/4/8 23:32
  */
 public interface UserService {
-    /*
-     * @Title:
-     * @Description:
-     * @param null:
+    /**
+     * 获取用户
+     *
+     * @param user
      * @return
-     * @Author: Tyler
-     * @Date: 2024/4/8
      */
     User getUser(User user);
+
+    /**
+     * 用于测试 mock 接口返回值
+     *
+     * @return
+     */
+    default short getNumber() {
+        return 1;
+    }
 }

@@ -8,14 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.rmi.registry.Registry;
 
-/**
- * RPC 框架应用
- * 相当于 holder，存放了项目全局用到的变量。双检锁单例模式实现
- *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
- * @learn <a href="https://codefather.cn">程序员鱼皮的编程宝典</a>
- * @from <a href="https://yupi.icu">编程导航知识星球</a>
- */
+
 /**
  * RPC 框架应用
  * 相当于 holder，存放了项目全局用到的变量。双检锁单例模式实现
@@ -32,7 +25,7 @@ public class RpcApplication {
      */
     public static void init(RpcConfig newRpcConfig) {
         rpcConfig = newRpcConfig;
-        log.info("rpc init, config = {}", newRpcConfig.toString());
+        log.info("rpc init,config = {}", newRpcConfig.toString());
     }
 
     /**
@@ -42,8 +35,8 @@ public class RpcApplication {
         RpcConfig newRpcConfig;
         try {
             newRpcConfig = ConfigUtils.loadConfig(RpcConfig.class, RpcConstant.DEFAULT_CONFIG_PREFIX);
+
         } catch (Exception e) {
-            // 配置加载失败，使用默认值
             newRpcConfig = new RpcConfig();
         }
         init(newRpcConfig);
@@ -54,6 +47,7 @@ public class RpcApplication {
      *
      * @return
      */
+
     public static RpcConfig getRpcConfig() {
         if (rpcConfig == null) {
             synchronized (RpcApplication.class) {
