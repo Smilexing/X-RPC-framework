@@ -1,0 +1,3 @@
+roundRobin=com.smile.loadbalancer.RoundRobinLoadBalancer
+random=com.smile.loadbalancer.RandomLoadBalancer
+consistentHash=com.smile.loadbalancer.ConsistentHashLoadBalancer

@@ -1,0 +1,4 @@
+failBack=com.smile.fault.tolerant.FailBackTolerantStrategy
+failFast=com.smile.fault.tolerant.FailFastTolerantStrategy
+failOver=com.smile.fault.tolerant.FailOverTolerantStrategy
+failSafe=com.smile.fault.tolerant.FailSafeTolerantStrategy

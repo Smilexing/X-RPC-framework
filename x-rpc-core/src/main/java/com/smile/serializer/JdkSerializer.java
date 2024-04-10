@@ -3,10 +3,11 @@ package com.smile.serializer;
 import java.io.*;
 
 /**
- * @author Tom Smile
- * @version 1.0
- * @description: TODO
- * @date 2024/4/9 10:44
+ * JDK 序列化器
+ *
+ * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
+ * @learn <a href="https://codefather.cn">编程宝典</a>
+ * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
 public class JdkSerializer implements Serializer {
 

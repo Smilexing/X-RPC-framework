@@ -1,0 +1,2 @@
+etcd=com.smile.registry.EtcdRegistry
+zookeeper=com.smile.registry.ZooKeeperRegistry
