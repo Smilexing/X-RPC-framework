@@ -1,5 +1,6 @@
 package com.smile.example.provider;
 
+
 import cn.hutool.http.HttpRequest;
 import cn.hutool.http.HttpResponse;
 import com.smile.example.common.model.User;

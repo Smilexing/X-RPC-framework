@@ -1,12 +1,11 @@
 package com.smile.example.provider;
 
 
+import com.smile.config.RpcConfig;
 import com.smile.example.common.model.User;
 import com.smile.example.common.service.UserService;
 import com.smile.proxy.ServiceProxyFactory;
-import com.smile.registry.LocalRegistry;
-import com.smile.server.HttpServer;
-import com.smile.server.VertxHttpServer;
+import com.smile.utils.ConfigUtils;
 
 /**
  * 简易服务提供者示例
@@ -15,10 +14,11 @@ import com.smile.server.VertxHttpServer;
  * @learn <a href="https://codefather.cn">编程宝典</a>
  * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
-public class EasyProviderExample {
+public class EasyConsummerExample {
 
     public static void main(String[] args) {
-
+        RpcConfig rpc = ConfigUtils.loadConfig(RpcConfig.class, "rpc");
+        System.out.println(rpc);
         UserService userService = ServiceProxyFactory.getProxy(UserService.class);
         User user = new User();
         user.setName("yupi");

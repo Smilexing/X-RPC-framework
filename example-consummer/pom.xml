@@ -9,7 +9,7 @@
   <dependencies>
     <dependency>
       <groupId>com.smile</groupId>
-      <artifactId>x-rpc-easy</artifactId>
+      <artifactId>x-rpc-core</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
@@ -29,7 +29,7 @@
     <version>1.18.30</version>
     <scope>provided</scope>
   </dependency>
-</dependencies>
+  </dependencies>
 
 <build>
 <plugins>

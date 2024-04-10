@@ -1,6 +1,7 @@
 package com.smile.example.provider;
 
 
+import com.smile.RpcApplication;
 import com.smile.example.common.service.UserService;
 import com.smile.registry.LocalRegistry;
 import com.smile.server.HttpServer;
@@ -16,6 +17,8 @@ import com.smile.server.VertxHttpServer;
 public class EasyProviderExample {
 
     public static void main(String[] args) {
+        // RPC 框架初始化
+        RpcApplication.init();
         // 注册服务
         LocalRegistry.register(UserService.class.getName(), UserServiceImpl.class);
 
