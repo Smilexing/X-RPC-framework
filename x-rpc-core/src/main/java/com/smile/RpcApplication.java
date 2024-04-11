@@ -1,12 +1,13 @@
 package com.smile;
 
 
+import com.smile.config.RegistryConfig;
 import com.smile.config.RpcConfig;
 import com.smile.constant.RpcConstant;
+import com.smile.registry.Registry;
+import com.smile.registry.RegistryFactory;
 import com.smile.utils.ConfigUtils;
 import lombok.extern.slf4j.Slf4j;
-
-import java.rmi.registry.Registry;
 
 
 /**
@@ -26,6 +27,11 @@ public class RpcApplication {
     public static void init(RpcConfig newRpcConfig) {
         rpcConfig = newRpcConfig;
         log.info("rpc init,config = {}", newRpcConfig.toString());
+        // 注册中心初始化
+        RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
+        registry.init(registryConfig);
+        log.info("registry init, config = {}", registryConfig);
     }
 
     /**
