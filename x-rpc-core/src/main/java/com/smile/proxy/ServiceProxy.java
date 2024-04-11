@@ -13,16 +13,14 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
 /**
- * @author Tom Smile
- * @version 1.0
- * @description: TODO
- * @date 2024/4/9 10:18
+ * 服务代理（JDK 动态代理）
  */
 public class ServiceProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        Serializer serializer = new JdkSerializer();
+        Serializer serializer = new JdkSerializer();   //JdkSerializer 来序列化和反序列化对象
+
         RpcRequest rpcRequest = RpcRequest.builder()
                 .serviceName(method.getDeclaringClass().getName())
                 .methodName(method.getName())
