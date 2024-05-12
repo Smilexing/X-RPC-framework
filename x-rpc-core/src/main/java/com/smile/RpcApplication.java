@@ -29,9 +29,13 @@ public class RpcApplication {
         log.info("rpc init,config = {}", newRpcConfig.toString());
         // 注册中心初始化
         RegistryConfig registryConfig = rpcConfig.getRegistryConfig();
+        //Spi机制-指定注册中心类别，这里的registry接受的是一个类，而这个类-etcdRegistry（实现了Registry接口）
         Registry registry = RegistryFactory.getInstance(registryConfig.getRegistry());
-        registry.init(registryConfig);
+        registry.init(registryConfig);  //这里调用的init方法也是etcdRegistry下的
         log.info("registry init, config = {}", registryConfig);
+
+//        创建并注册Shutdown Hook，JVM退出时执行操作
+        Runtime.getRuntime().addShutdownHook(new Thread(registry::destroy));
     }
 
     /**

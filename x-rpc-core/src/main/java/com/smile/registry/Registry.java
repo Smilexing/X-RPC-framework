@@ -62,5 +62,11 @@ public interface Registry {
 
     void hearBeat();
 
+    /**
+     * 监听（消费端）
+     *
+     * @param serviceNodeKey
+     */
+    void watch(String serviceNodeKey);
 
 }
