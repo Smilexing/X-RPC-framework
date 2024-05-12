@@ -6,6 +6,7 @@ import com.smile.example.common.model.User;
 import com.smile.example.common.service.UserService;
 import com.smile.proxy.ServiceProxyFactory;
 import com.smile.utils.ConfigUtils;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 简易服务提供者示例
@@ -14,6 +15,7 @@ import com.smile.utils.ConfigUtils;
  * @learn <a href="https://codefather.cn">编程宝典</a>
  * @from <a href="https://yupi.icu">编程导航知识星球</a>
  */
+@Slf4j
 public class EasyConsummerExample {
 
     public static void main(String[] args) {
